@@ -50,8 +50,6 @@ deploy:
     - internal/docker-push:
         username: $USERNAME
         password: $PASSWORD
-        cmd: /pipeline/source/godaemon
-        port: "8080"
-        tag: latest
         repository: tomasyuan12138/godaemon
-        registry: https://registry.hub.docker.com
+        cmd: tomasyuan12138/godaemon
+        tag: latest

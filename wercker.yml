@@ -43,3 +43,15 @@ build:
         name: go test
         code: |
           go test ./...
+
+          
+deploy:
+  steps:
+    - internal/docker-push:
+        username: tomasyuan12138
+        password: yuanchong1106
+        cmd: /pipeline/source/go-wercker
+        port: "8080"
+        tag: latest
+        repository: tomasyuan12138/godaemon
+        registry: https://registry.hub.docker.com

@@ -48,9 +48,9 @@ build:
 deploy:
   steps:
     - internal/docker-push:
-        username: tomasyuan12138
-        password: yuanchong1106
-        cmd: /pipeline/source/go-wercker
+        username: $USERNAME
+        password: $PASSWORD
+        cmd: /pipeline/source/godaemon
         port: "8080"
         tag: latest
         repository: tomasyuan12138/godaemon

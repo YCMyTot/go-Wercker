@@ -40,6 +40,13 @@ build:
 deploy:
   # This deploys to docker hub
   steps:
+    - internal/docker-build:
+        dockerfile: Dockerfile
+        image-name: godaemon
+    
+    - internal/docker-run:
+        image: godaemon
+    
     - internal/docker-scratch-push:
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD

@@ -12,7 +12,7 @@ func sayHello(w http.ResponseWriter, r *http.Request)  {
 
 func main() {
     http.HandleFunc("/",sayHello)
-    log.Println("启动了")
+    log.Println("启动了12138")
     err := http.ListenAndServe(":9000",nil)
     if err != nil{
         log.Fatal("List 9000")

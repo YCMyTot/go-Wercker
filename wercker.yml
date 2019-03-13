@@ -42,7 +42,7 @@ build:
         image-name: my-new-image
     
     - internal/docker-run:
-        image-name: my-new-image
+        image: my-new-image
         name: godaemon
     
 deploy:

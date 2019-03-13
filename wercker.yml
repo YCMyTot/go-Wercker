@@ -37,9 +37,9 @@ build:
         code: |
           cp go-Wercker "$WERCKER_OUTPUT_DIR"
           
-    - internal/docker-build:
-        dockerfile: Dockerfile
-        image-name: godaemon
+    #- internal/docker-build:
+    #    dockerfile: Dockerfile
+    #    image-name: godaemon
     
     #- internal/docker-run:
     #    image: godaemon
@@ -50,7 +50,7 @@ deploy:
   steps:
     # - internal/docker-scratch-push:
     - internal/docker-push:
-        image-name: godaemon
+        # image-name: godaemon
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
         repository: tomasyuan12138/godaemon

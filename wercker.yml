@@ -42,7 +42,7 @@ deploy:
   steps:
     - internal/docker-build:
         dockerfile: Dockerfile
-        image-name: godaemon
+        image: godaemon
     
     - internal/docker-run:
         image: godaemon

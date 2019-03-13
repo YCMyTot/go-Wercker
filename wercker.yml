@@ -25,31 +25,23 @@ build:
     # Sets the go workspace and places you package
     # at the right place in the workspace tree
     - setup-go-workspace
-
-    # Gets the dependencies
-    - script:
-        name: go get
-        code: |
-          go get
-
+    
     # Build the project
     - script:
-        name: go build
+        name: Build application
         code: |
-          go build ./...
-
-    # Test the project
+          go get github.com/YCMyTot/go-Wercker
+          go build -o go-Wercker
     - script:
-        name: go test
+        name: Copy binary
         code: |
-          go test ./...
-
+          cp go-Wercker "$WERCKER_OUTPUT_DIR"
           
 deploy:
+  # This deploys to docker hub
   steps:
-    - internal/docker-push:
+    - internal/docker-scratch-push:
         username: $USERNAME
         password: $PASSWORD
         repository: tomasyuan12138/godaemon
-        cmd: tomasyuan12138/godaemon
-        tag: latest
+        cmd: ./go-Wercker

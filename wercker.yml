@@ -39,10 +39,10 @@ build:
           
     - internal/docker-build:
         dockerfile: Dockerfile
-        image-name: my-new-image
+        image-name: godaemon
     
     - internal/docker-run:
-        image: my-new-image
+        image: godaemon
         name: godaemon
     
 deploy:
@@ -50,7 +50,7 @@ deploy:
   steps:
     # - internal/docker-scratch-push:
     - internal/docker-push:
-        image-name: my-new-image
+        image-name: godaemon
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
         repository: tomasyuan12138/godaemon

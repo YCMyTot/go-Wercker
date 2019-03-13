@@ -37,16 +37,16 @@ build:
         code: |
           cp go-Wercker "$WERCKER_OUTPUT_DIR"
           
+    - internal/docker-build:
+        dockerfile: Dockerfile
+        image-name: my-new-image
+    
+    - internal/docker-run:
+        image-name: my-new-image
+    
 deploy:
   # This deploys to docker hub
   steps:
-    - internal/docker-build:
-        dockerfile: Dockerfile
-        image-name: tomasyuan12138/godaemon
-    
-    #- internal/docker-run:
-    #    image-name: godaemon
-    
     - internal/docker-scratch-push:
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD

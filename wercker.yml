@@ -54,3 +54,6 @@ deploy:
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
         repository: tomasyuan12138/godaemon
+        cmd: /pipeline/source/web-application
+        working-dir: /pipeline/source/
+        tag: latest

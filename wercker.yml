@@ -42,10 +42,10 @@ deploy:
   steps:
     - internal/docker-build:
         dockerfile: Dockerfile
-        image-name: godaemon
+        #image-name: godaemon
     
-    - internal/docker-run:
-        image-name: godaemon
+    #- internal/docker-run:
+    #    image-name: godaemon
     
     - internal/docker-scratch-push:
         username: $DOCKER_USERNAME

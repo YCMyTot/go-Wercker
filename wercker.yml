@@ -41,13 +41,14 @@ build:
         dockerfile: Dockerfile
         image-name: my-new-image
     
-    - internal/docker-run:
-        image-name: my-new-image
+    #- internal/docker-run:
+    #    image-name: my-new-image
     
 deploy:
   # This deploys to docker hub
   steps:
     - internal/docker-scratch-push:
+        image-name: my-new-image
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
         repository: tomasyuan12138/godaemon

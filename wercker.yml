@@ -41,8 +41,9 @@ build:
         dockerfile: Dockerfile
         image-name: my-new-image
     
-    #- internal/docker-run:
-    #    image-name: my-new-image
+    - internal/docker-run:
+        image-name: my-new-image
+        name: godaemon
     
 deploy:
   # This deploys to docker hub

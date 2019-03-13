@@ -41,7 +41,7 @@ deploy:
   # This deploys to docker hub
   steps:
     - internal/docker-scratch-push:
-        username: $USERNAME
-        password: $PASSWORD
+        username: $DOCKER_USERNAME
+        password: $DOCKER_PASSWORD
         repository: tomasyuan12138/godaemon
         cmd: ./go-Wercker

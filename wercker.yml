@@ -41,9 +41,9 @@ build:
         dockerfile: Dockerfile
         image-name: godaemon
     
-    - internal/docker-run:
-        image: godaemon
-        name: godaemon
+    #- internal/docker-run:
+    #    image: godaemon
+    #    name: godaemon
     
 deploy:
   # This deploys to docker hub

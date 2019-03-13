@@ -48,7 +48,8 @@ build:
 deploy:
   # This deploys to docker hub
   steps:
-    - internal/docker-scratch-push:
+    # - internal/docker-scratch-push:
+    - internal/docker-push:
         image-name: my-new-image
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
